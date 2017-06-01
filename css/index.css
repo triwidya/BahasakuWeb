@@ -20,3 +20,7 @@ div.panel {
     display: none;
     background-color: white;
 }
+
+div.panel p{
+  margin: 0;
+}
