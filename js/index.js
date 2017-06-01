@@ -29,6 +29,8 @@
         panel.className = 'panel';
         dbRefObjectChild.on('child_added', snapChild => {
             const panelChild = document.createElement('p');
+            panelChild.className = 'sub_menu';
+            panelChild.id = snapChild.val();
             const nav_link = document.createElement('a');
             nav_link.id = snapChild.val();
             nav_link.className = 'mdl-navigation__link';
@@ -36,7 +38,6 @@
             nav_link.appendChild(text);
             panelChild.appendChild(nav_link);
             panel.appendChild(panelChild);
-            // console.log(snapChild.val());
         });
         menu.appendChild(panel);
     });
@@ -47,9 +48,7 @@
 
     dbRefObject.once("value", function(snap) {
         var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
+        for (var i = 0; i < acc.length; i++) {
             acc[i].onclick = function(){
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
@@ -60,5 +59,34 @@
                 }
             }
         }
+
+        var sub_menu = document.getElementsByClassName("sub_menu");
+        for (var i = 0; i < acc.length; i++) {
+            sub_menu[i].onclick = function(){
+                setData(this.id);
+            }
+        }
+
     });
 }());
+
+function setData(bahasa) {
+    firebase.database().ref('/Bahasa/' + bahasa + "/Sejarah/").once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var storage = firebase.storage();
+        var pathReference = storage.refFromURL('gs://bahasaku-a7af4.appspot.com/Photos/'+bahasa);
+
+        pathReference.getDownloadURL().then(function(url) {
+            console.log(url);
+            document.getElementById("latar").style.background = "url('" + url +"') #46B6AC";
+        }).catch(function(error) {
+          // Handle any errors
+        });
+
+        console.log(pathReference);
+        var childKey = childSnapshot.key;
+        document.getElementById("keterangan").innerHTML = childSnapshot.val().deskripsiBahasas;
+        document.getElementById("judul").innerHTML = childSnapshot.val().titleBahasas;
+      });
+    });
+}
