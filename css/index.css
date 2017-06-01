@@ -1,5 +1,5 @@
 button.accordion {
-    background-color: #eee;
+    background-color: #ECEFF1;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -19,4 +19,86 @@ div.panel {
     padding: 0px;
     display: none;
     background-color: white;
+}
+
+.mdl-dialog {
+    border: none;
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    height: 550px
+  }
+.mdl-dialog__title {
+    padding: 20px 20px 0;
+    margin: 0;
+    font-size: 2.5rem; }
+.mdl-dialog__actions {
+    padding: 8px 8px 8px 24px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+.mdl-dialog__actions > * {
+    margin-left: 8px;
+    height: 36px; }
+.mdl-dialog__actions > *:first-child {
+    margin-left: 0; }
+.mdl-dialog__actions--full-width {
+    padding: 0 0 8px 0; }
+.mdl-dialog__actions--full-width > * {
+    height: 48px;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding-left: 16px;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  .mdl-dialog__content {
+    padding: 20px 24px 24px 24px;
+    color: rgba(0,0,0, 0.54);
+   }
+   .mdl-textfield__input{
+     padding: 25px;
+     width: 100px;
+   }
+   .mdl-textfield {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 394px;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .mdl-textfield__input {
+    padding: 40px;
+    margin-top: auto;
+    width: 394px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 20px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
