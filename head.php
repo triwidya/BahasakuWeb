@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.1.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <style>
       .demo-layout-transparent {
@@ -142,139 +144,7 @@
       </header>
               <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">BahasaKu</span>
-                <nav class="mdl-navigation">
-
-                  <button class="accordion">Sumatera Barat</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Sumatera Selatan</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Sumatera Utara</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Sumatera Aceh</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Bali</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Bangka Belitung</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Banten</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Bengkulu</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">DKI Jakarta</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Gorontalo</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Jambi</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Jawa Tengah</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Jawa Timur</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Kalimantan Barat</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Kalimantan Selatan</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Kalimantan Tengah</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Kalimantan Utara</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Kepulauan Riau</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Lampung</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Maluku</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Maluku Utara</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
-
-                  <button class="accordion">Papua</button>
-                  <div class="panel">
-                    <p><a class="mdl-navigation__link" href="">Bahasa 1</a></p>
-                    <p><a class="mdl-navigation__link" href="">Bahasa 2</a></p>
-                  </div>
+                <nav id="menu" class="mdl-navigation">
 
                 </nav>
               </div>

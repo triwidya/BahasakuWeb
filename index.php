@@ -8,30 +8,20 @@
       }
       .sejarah-card-square > .mdl-card__title {
         color: #fff;
-        background:
-          url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
       }
 
 </style>
     <div style="padding : 16px">
       <div class="mdl-grid">
         <div class="sejarah-card-square mdl-card mdl-shadow--2dp">
-          <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
+          <div id="latar" class="mdl-card__title mdl-card--expand">
+    <h2 id="judul" class="mdl-card__title-text">Tidak Ada Judul Untuk Di tampilkan</h2>
     </div>
-    <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
+    <div id="keterangan" class="mdl-card__supporting-text">
+      Tidak Ada Sejarah Untuk Di Tampilkan
   </div>
       <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -73,9 +63,6 @@
         width: 650px;
 
   }
-
-
-
   </style>
   <div style="padding : 16px" >
   </div>
@@ -158,31 +145,7 @@
             <th>Menu</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">Ayah</td>
-            <td>Bapak</td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span>
-      </span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="table_angka">
 
         </tbody>
       </table>
@@ -231,31 +194,7 @@
             <th>Menu</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">Ayah</td>
-            <td>Bapak</td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span>
-      </span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="table_percakapan">
 
         </tbody>
       </table>
