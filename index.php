@@ -50,7 +50,7 @@
         color: #46B6AC;
   }
       </style>
-      <div style="padding : 40px">
+      <div style="padding-left : 40px">
 
       <div class="kamus-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
@@ -66,42 +66,18 @@
   </style>
   <div style="padding : 16px" >
   </div>
-  <table class="mdl-data-table mdl-js-data-table">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
-        <th>Bahasa Daerah</th>
-        <th>Menu</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric">Ayah</td>
-        <td>Bapak</td>
-        <td><span class="mdl-chip mdl-chip--contact">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">cloud upload</i>
-          </button>
-      <span class="mdl-chip__text">Upload</span></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"></td>
-        <td>
-        </td>
-        <td><span class="mdl-chip mdl-chip--contact">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">cloud upload</i>
-          </button>
-      <span class="mdl-chip__text">Upload</span>
-    </span></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
+          <th>Bahasa Daerah</th>
+          <th>Menu</th>
+        </tr>
+      </thead>
+      <tbody id="table_keluarga">
+
+      </tbody>
+    </table>
     <div class="mdl-card__menu">
       <button type="button" id="btnSejarah" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-keluarga">
         <i class="material-icons">add</i>

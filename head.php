@@ -34,7 +34,8 @@
      }
 
      .mdl-layout-title {
-       padding: 16px;
+       line-height: 13px !important;
+       padding: 26px;
        height: 20px
      }
     .mdh-expandable-search {
