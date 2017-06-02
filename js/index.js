@@ -77,16 +77,35 @@ function setData(bahasa) {
         var pathReference = storage.refFromURL('gs://bahasaku-a7af4.appspot.com/Photos/'+bahasa);
 
         pathReference.getDownloadURL().then(function(url) {
-            console.log(url);
             document.getElementById("latar").style.background = "url('" + url +"') #46B6AC";
         }).catch(function(error) {
           // Handle any errors
         });
 
-        console.log(pathReference);
         var childKey = childSnapshot.key;
         document.getElementById("keterangan").innerHTML = childSnapshot.val().deskripsiBahasas;
         document.getElementById("judul").innerHTML = childSnapshot.val().titleBahasas;
+      });
+    });
+    $("#table_keluarga").empty();
+    $("#table_angka").empty();
+    $("#table_percakapan").empty();
+    firebase.database().ref('/Bahasa/' + bahasa + "/Keluarga/").once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+          console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
+          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">cloud upload</i></button><span class=\"mdl-chip__text\">Upload</span></span></td></tr>");
+      });
+    });
+    firebase.database().ref('/Bahasa/' + bahasa + "/Angka/").once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+          console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
+          $("#table_angka").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">cloud upload</i></button><span class=\"mdl-chip__text\">Upload</span></span></td></tr>");
+      });
+    });
+    firebase.database().ref('/Bahasa/' + bahasa + "/Percakapan/").once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+          console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
+          $("#table_percakapan").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">cloud upload</i></button><span class=\"mdl-chip__text\">Upload</span></span></td></tr>");
       });
     });
 }

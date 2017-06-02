@@ -88,33 +88,19 @@
       <th>Menu</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
+  <tbody id="table_keluarga">
+    <!-- <tr>
       <td class="mdl-data-table__cell--non-numeric">Ayah</td>
       <td>Bapak</td>
-      <td><span class="mdl-chip mdl-chip--contact">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">cloud upload</i>
-        </button>
-    <span class="mdl-chip__text">Upload</span></td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"></td>
       <td>
+        <span class="mdl-chip mdl-chip--contact">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">cloud upload</i>
+            </button>
+            <span class="mdl-chip__text">Upload</span>
+        </span>
       </td>
-      <td><span class="mdl-chip mdl-chip--contact">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">cloud upload</i>
-        </button>
-    <span class="mdl-chip__text">Upload</span>
-  </span></td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"></td>
-      <td></td>
-      <td></td>
-    </tr>
-
+    </tr> -->
   </tbody>
 </table>
   <div class="mdl-card__menu">
@@ -160,31 +146,7 @@
             <th>Menu</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">Ayah</td>
-            <td>Bapak</td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span>
-      </span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="table_angka">
 
         </tbody>
       </table>
@@ -233,31 +195,7 @@
             <th>Menu</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">Ayah</td>
-            <td>Bapak</td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td><span class="mdl-chip mdl-chip--contact">
-              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">cloud upload</i>
-              </button>
-          <span class="mdl-chip__text">Upload</span>
-      </span></td>
-          </tr>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric"></td>
-            <td></td>
-            <td></td>
-          </tr>
+        <tbody id="table_percakapan">
 
         </tbody>
       </table>
