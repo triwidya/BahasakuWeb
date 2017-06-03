@@ -39,7 +39,7 @@
 <!-- Wide card with share menu button -->
   <style>
       .kamus-card-wide.mdl-card {
-        width: 640px;
+        width: 650px;
       }
       .kamus-card-wide > .mdl-card__title {
         background: bottom right 15% no-repeat #46B6AC
@@ -50,7 +50,7 @@
         color: #46B6AC;
   }
       </style>
-      <div style="padding-left : 40px">
+      <div style="padding-left : 100px">
 
       <div class="kamus-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
@@ -72,6 +72,9 @@
           <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
           <th>Bahasa Daerah</th>
           <th>Menu</th>
+          <th>Edit</th>
+          <th>Delete</th>
+
         </tr>
       </thead>
       <tbody id="table_keluarga">
@@ -119,6 +122,8 @@
             <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
             <th>Bahasa Daerah</th>
             <th>Menu</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody id="table_angka">
@@ -126,7 +131,7 @@
         </tbody>
       </table>
         <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-angka">
             <i class="material-icons">add</i>
           </button>
         </div>
@@ -168,6 +173,8 @@
             <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
             <th>Bahasa Daerah</th>
             <th>Menu</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody id="table_percakapan">
@@ -175,7 +182,7 @@
         </tbody>
       </table>
         <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-percakapan">
             <i class="material-icons">add</i>
           </button>
         </div>
