@@ -93,19 +93,19 @@ function setData(bahasa) {
     firebase.database().ref('/Bahasa/' + bahasa + "/Keluarga/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
           console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
-          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">cloud upload</i></button><span class=\"mdl-chip__text\">Upload</span></span></td></tr>");
+          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>" + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-js-button mdl-button--icon mdl-button--colored\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>" );
       });
     });
     firebase.database().ref('/Bahasa/' + bahasa + "/Angka/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
           console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
-          $("#table_angka").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">cloud upload</i></button><span class=\"mdl-chip__text\">Upload</span></span></td></tr>");
+          $("#table_angka").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>");
       });
     });
     firebase.database().ref('/Bahasa/' + bahasa + "/Percakapan/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
           console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
-          $("#table_percakapan").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">cloud upload</i></button><span class=\"mdl-chip__text\">Upload</span></span></td></tr>");
+          $("#table_percakapan").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>");
       });
     });
 }
@@ -125,32 +125,65 @@ for (i = 0; i < acc.length; i++) {
 }
 
 // Fungsi Progress dialog sejarah
-
-var dialogButton = document.querySelector('.dialog-button');
-var dialog = document.querySelector('#dialog');
-if (! dialog.showModal) {
-  dialogPolyfill.registerDialog(dialog);
-}
-dialogButton.addEventListener('click', function() {
-   dialog.showModal();
-});
-dialog.querySelector('button:not([disabled])')
-.addEventListener('click', function() {
-  dialog.close();
-});
-
-
+(function () {
+    var dialogButton = document.querySelector('.dialog-button');
+    var dialog = document.querySelector('#dialog1');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
 
 // Fungsi Progress dialog keluarga
-var dialogButton = document.querySelector('.dialog-button-keluarga');
-var dialog = document.querySelector('#dialog');
-if (! dialog.showModal) {
-  dialogPolyfill.registerDialog(dialog);
-}
-dialogButton.addEventListener('click', function() {
-   dialog.showModal();
-});
-dialog.querySelector('button:not([disabled])')
-.addEventListener('click', function() {
-  dialog.close();
-});
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-keluarga');
+    var dialog = document.querySelector('#dialog2 ');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
+
+// Fungsi Progress dialog angka
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-angka');
+    var dialog = document.querySelector('#dialog3 ');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
+
+// Fungsi Progress dialog percakapan
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-percakapan');
+    var dialog = document.querySelector('#dialog4 ');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
