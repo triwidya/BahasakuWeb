@@ -3,7 +3,7 @@
 <!-- Square card -->
   <style>
       .sejarah-card-square.mdl-card {
-        width: 500px;
+        width: 450px;
         height: 520px;
       }
       .sejarah-card-square > .mdl-card__title {
@@ -14,7 +14,7 @@
       }
 
 </style>
-    <div style="padding : 16px">
+    <div style="padding-left: 30px">
       <div class="mdl-grid">
         <div class="sejarah-card-square mdl-card mdl-shadow--2dp">
           <div id="latar" class="mdl-card__title mdl-card--expand">
@@ -23,11 +23,6 @@
     <div id="keterangan" class="mdl-card__supporting-text">
       Tidak Ada Sejarah Untuk Di Tampilkan
   </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          View Updates
-        </a>
-      </div>
       <div class="mdl-card__menu">
         <button type="button" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button">
           <i class="material-icons">add</i>
@@ -39,7 +34,7 @@
 <!-- Wide card with share menu button -->
   <style>
       .kamus-card-wide.mdl-card {
-        width: 650px;
+        width: 700px;
       }
       .kamus-card-wide > .mdl-card__title {
         background: bottom right 15% no-repeat #46B6AC
@@ -59,8 +54,9 @@
       </style>
 
   <style>
-      .mdl-data-table{
-        width: 650px;
+  .mdl-data-table {
+  width: 700px;
+}
 
   }
   </style>
@@ -69,16 +65,15 @@
     <table class="mdl-data-table mdl-js-data-table">
       <thead>
         <tr>
-          <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
-          <th>Bahasa Daerah</th>
-          <th>Menu</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <td class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</td>
+          <td>Bahasa Daerah</td>
+          <td>Menu</td>
+          <td>Edit</td>
+          <td>Delete</td>
 
         </tr>
       </thead>
       <tbody id="table_keluarga">
-
       </tbody>
     </table>
     <div class="mdl-card__menu">
@@ -90,7 +85,7 @@
 
 <style>
     .kamusAngka-card-wide.mdl-card {
-      width: 650px;
+      width: 700px;
     }
     .kamusAngka-card-wide > .mdl-card__title {
       background: bottom right 15% no-repeat #46B6AC
@@ -100,7 +95,7 @@
       color: #46B6AC;
     }
 </style>
-<div style="padding : 30px 0">
+<div style="padding : 20px 0">
 
 <div class="kamusAngka-card-wide mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
@@ -110,7 +105,7 @@
 
 <style>
     .mdl-data-table{
-      width: 650px;
+      width: 700px;
 
 }
 </style>
@@ -139,7 +134,7 @@
 
       <style>
       .kamusPercakapan-card-wide.mdl-card {
-        width: 650px;
+        width: 700px;
       }
       .kamusPercakapan-card-wide > .mdl-card__title {
         background: bottom right 15% no-repeat #46B6AC
@@ -152,12 +147,12 @@
 
       <style>
       .mdl-data-table{
-        width: 650px;
+        width: 700px;
 
       }
       </style>
 
-      <div style="padding : 30px 0">
+      <div style="padding : 20px 0">
 
       <div class="kamusPercakapan-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
@@ -189,5 +184,7 @@
       </div>
       </div>
       </div>
+
+
 
 <?php include 'foot.php'; ?>
