@@ -12,7 +12,7 @@
         <div class="row col-sm-12">
           <input type="name" class="form-control" id="txtJudulSejarah" placeholder="Judul Deskripsi">
           <div class="mdl-textfield mdl-js-textfield">
-            <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+            <textarea class="mdl-textfield__input" type="text" rows= "3" id="txtKontenSejarah" ></textarea>
             <label class="mdl-textfield__label" for="sample5">Deskripsi Bahasa</label>
           </div>
           <div class="pic-section">
@@ -23,7 +23,7 @@
               <img src="" id="profile-pic" />
             </div>
             <div>
-              <input type="submit" id="btnInput" class="btn btn-primary" value="Update" data-dismiss="modal">
+              <input type="submit" id="btnInputSejarah" class="btn btn-primary" value="Update" data-dismiss="modal">
             </div>
           </div>
           <div class="mdl-dialog__actions">
@@ -36,14 +36,14 @@
 
   <!-- Fungsi Progress dialog keluarga -->
   <dialog id="dialog2" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Tambah Kamus</h3>
+    <h3 class="mdl-dialog__title">Tambah Kamus Keluarga</h3>
     <div class="mdl-dialog__content">
       <input type="name" class="form-control" id="txtBahasaKeluarga" placeholder="Bahasa Indoesia">
       <div style="padding:10px"></div>
       <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
       <div class="pic-section">
         <div style="padding-top: 10px" >
-          <input type="submit" id="btnInput" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
+          <input type="submit" id="btnInputKeluarga" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
         </div>
       </div>
       <div class="mdl-dialog__actions">
@@ -57,14 +57,14 @@
   <!-- Fungsi Progress dialog Angka -->
 
   <dialog id="dialog3" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Tambah Kamus</h3>
+    <h3 class="mdl-dialog__title">Tambah Kamus Angka</h3>
     <div class="mdl-dialog__content">
-      <input type="name" class="form-control" id="txtBahasaKeluarga" placeholder="Bahasa Indoesia">
+      <input type="name" class="form-control" id="txtBahasaAngka" placeholder="Bahasa Indoesia">
       <div style="padding:10px"></div>
-      <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
+      <input type="name" class="form-control" id="txtDaerahAngka" placeholder="Bahasa Daerah">
       <div class="pic-section">
         <div style="padding-top: 10px" >
-          <input type="submit" id="btnInput" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
+          <input type="submit" id="btnInputAngka" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
         </div>
       </div>
       <div class="mdl-dialog__actions">
@@ -78,14 +78,14 @@
   <!-- Fungsi Progress dialog percakapan -->
 
   <dialog id="dialog4" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Tambah Kamus</h3>
+    <h3 class="mdl-dialog__title">Tambah Kamus Percakapan</h3>
     <div class="mdl-dialog__content">
-      <input type="name" class="form-control" id="txtBahasaKeluarga" placeholder="Bahasa Indoesia">
+      <input type="name" class="form-control" id="txtBahasaPercakapan" placeholder="Bahasa Indoesia">
       <div style="padding:10px"></div>
-      <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
+      <input type="name" class="form-control" id="txtDaerahPercakapan" placeholder="Bahasa Daerah">
       <div class="pic-section">
         <div style="padding-top: 10px" >
-          <input type="submit" id="btnInput" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
+          <input type="submit" id="btnInputPercakapan" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
         </div>
       </div>
       <div class="mdl-dialog__actions">

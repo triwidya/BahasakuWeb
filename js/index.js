@@ -70,7 +70,9 @@
     });
 }());
 
+var selectedBahasa;
 function setData(bahasa) {
+    selectedBahasa = bahasa;
     firebase.database().ref('/Bahasa/' + bahasa + "/Sejarah/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
         var storage = firebase.storage();
@@ -93,7 +95,7 @@ function setData(bahasa) {
     firebase.database().ref('/Bahasa/' + bahasa + "/Keluarga/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
           console.log(childSnapshot.val().bahasaDaerah + " || " + childSnapshot.val().bahasaIndonesia);
-          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>" + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-js-button mdl-button--icon mdl-button--colored\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>" );
+          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\"><button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td></tr>");
       });
     });
     firebase.database().ref('/Bahasa/' + bahasa + "/Angka/").once('value', function(snapshot) {
@@ -187,3 +189,52 @@ for (i = 0; i < acc.length; i++) {
       dialog.close();
   });
 }());
+
+$('#btnInputKeluarga').click(function() {
+  const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
+  const bahasaDaerah = $('#txtDaerahKeluarga').val().trim();
+  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Keluarga').push().set({
+    bahasaDaerah: bahasaDaerah,
+    bahasaIndonesia: bahasaIndonesia
+  });
+});
+
+$('#btnInputAngka').click(function() {
+  const bahasaIndonesia = $('#txtBahasaAngka').val().trim();
+  const bahasaDaerah = $('#txtDaerahAngka').val().trim();
+  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Angka').push().set({
+    bahasaDaerah: bahasaDaerah,
+    bahasaIndonesia: bahasaIndonesia
+  });
+});
+
+$('#btnInputPercakapan').click(function() {
+  const bahasaIndonesia = $('#txtBahasaPercakapan').val().trim();
+  const bahasaDaerah = $('#txtDaerahPercakapan').val().trim();
+  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Percakapan').push().set({
+    bahasaDaerah: bahasaDaerah,
+    bahasaIndonesia: bahasaIndonesia
+  });
+});
+
+$('#btnInputSejarah').click(function() {
+    const bahasaTItle = $('#txtJudulSejarah').val().trim();
+    const bahasaKonten = $('#txtKontenSejarah').val().trim();
+    if(selectedBahasa!=null){
+        firebase.database().ref('/Bahasa/' + selectedBahasa + "/Sejarah/").once('value', function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
+            var childKey = childSnapshot.key;
+            firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Sejarah').child(childKey).set({
+              titleBahasas: bahasaTItle,
+              deskripsiBahasas: bahasaKonten
+            });
+          });
+        });
+    }
+});
+
+firebase.database().ref('Bahasa/').on('child_changed', function(data) {
+    if(selectedBahasa!=null){
+        setData(selectedBahasa);
+    }
+});
