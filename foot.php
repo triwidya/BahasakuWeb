@@ -38,7 +38,7 @@
   <dialog id="dialog2" class="mdl-dialog">
     <h3 class="mdl-dialog__title">Tambah Kamus Keluarga</h3>
     <div class="mdl-dialog__content">
-      <input type="name" class="form-control" id="txtBahasaKeluarga" placeholder="Bahasa Indoesia">
+      <td><input type="name" class="form-control" id="txtBahasaKeluarga" placeholder="Bahasa Indoesia">
       <div style="padding:10px"></div>
       <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
       <div class="pic-section">
@@ -95,5 +95,76 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Fungsi Progress dialog bahasa -->
+
+  <dialog id="dialog5" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Tambah Kamus</h3>
+    <div class="mdl-dialog__content">
+      <input type="name" class="form-control" id="txtBahasaKeluarga" placeholder="Kamus Bahasa">
+      <div style="padding:10px"></div>
+      <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
+      <div class="pic-section">
+        <div style="padding-top: 10px" >
+          <input type="submit" id="btnInput" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
+        </div>
+      </div>
+      <div class="mdl-dialog__actions">
+        <div style="padding-left: 150px">
+          <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+   <script src="https://api.filestackapi.com/filestack.js"></script>
+   <script>
+     filepicker.setKey("AynkfxksOQNSa83fviAQKz");
+     let handler = '';
+     $('#upload-button').on('click', function() {
+       filepicker.pick (
+         {
+           mimetype: 'image/*',
+           container: 'modal',
+           services: ['COMPUTER'],
+           openTo: 'COMPUTER'
+         },
+         function (Blob) {
+           console.log(JSON.stringify(Blob));
+           handler = Blob.url.substring(Blob.url.lastIndexOf('/') + 1);
+           $('#profile-pic').attr('src', `https://process.filestackapi.com/crop_faces=mode:fill/rounded_corners=radius:${$('.mdl-js-slider').val()}/${handler}`);
+         },
+         function (FPError) {
+           console.log(FPError.toString());
+         }
+       );
+     });
+     $('.mdl-js-slider').on('change', function() {
+       if(handler !== '') {
+         $('#profile-pic').attr('src', `https://process.filestackapi.com/crop_faces=mode:fill/rounded_corners=radius:${$(this).val()}/${handler}`);
+       }
+     })
+     const postToServer = profile => {
+       return fetch('/profiles', {
+         headers: new Headers({
+           'Content-Type': 'application/json'
+         }),
+         method: 'POST',
+         body: JSON.stringify(profile)
+       })
+       .then(response => response.json());
+     };
+     const save = () => {
+       const profile = {
+         img: $('#profile-pic').attr('src'),
+         name: $('#name').val(),
+         description: $('#description').val()
+       };
+       console.log(profile);
+       postToServer(profile);
+     };
+   </script>
+
 
 </html>
