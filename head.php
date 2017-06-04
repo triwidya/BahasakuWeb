@@ -15,15 +15,14 @@
 
       }
       .demo-layout-transparent .mdl-layout__header, .mdl-layout__drawer-button {
-        /* This background is dark, so we set text to white. Use 87% black instead if
-           your background is light. */
         color: white;
+        background: #394a52;
       }
 
 
      .mdl-layout__header-row{
-       padding: 16px;
-       height: 18px;
+       padding: 20px;
+       height: 20px;
        width: 16px;
      }
 
@@ -35,7 +34,7 @@
 
      .mdl-layout-title {
        line-height: 13px !important;
-       padding: 26px;
+       padding: 60px;
        height: 20px
      }
     .mdh-expandable-search {
@@ -106,6 +105,7 @@
      }
 
 
+
      /* Bug fix: https://github.com/google/material-design-lite/issues/1078
       * To much padding on the left of header when the menu button is hidden */
      @media screen and (min-width: 851px) {
@@ -128,6 +128,7 @@
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title">BahasaKu</span>
+
           <div class="mdl-card__menu">
             <!-- Displayed on Computer and Tablet -->
           <!-- Search -->
@@ -145,8 +146,11 @@
       </header>
               <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">BahasaKu</span>
+                </style>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-bahasa">
+                  <i class="material-icons">add</i>
+                </button>
                 <nav id="menu" class="mdl-navigation">
-
                 </nav>
               </div>
-      <main class="mdl-layout__content" style="padding : 0 20px">
+      <main class="mdl-layout__content" style="padding : 16px">
