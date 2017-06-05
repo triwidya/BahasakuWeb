@@ -94,17 +94,35 @@ function setData(bahasa) {
     $("#table_percakapan").empty();
     firebase.database().ref('/Bahasa/' + bahasa + "/Keluarga/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
-          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuUploadAudioKeluarga\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\"  style=\"cursor:pointer\"><button id=\"menuEditKeluarga\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">edit</i></button><span class=\"mdl-chip__text\">Edit</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuDeleteKeluarga\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">delete</i></button><span class=\"mdl-chip__text\">Delete</span></span></td></tr>");
+          var style;
+          if(childSnapshot.val().audioUrl){
+              style = "background: green;color: white;";
+          } else {
+              style = "";
+          }
+          $("#table_keluarga").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer; "+ style +"\"><button id=\"menuUploadAudioKeluarga\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\"  style=\"cursor:pointer\"><button id=\"menuEditKeluarga\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">edit</i></button><span class=\"mdl-chip__text\">Edit</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuDeleteKeluarga\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">delete</i></button><span class=\"mdl-chip__text\">Delete</span></span></td></tr>");
       });
     });
     firebase.database().ref('/Bahasa/' + bahasa + "/Angka/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
-          $("#table_angka").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuUploadAudioAngka\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\"  style=\"cursor:pointer\"><button id=\"menuEditAngka\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">edit</i></button><span class=\"mdl-chip__text\">Edit</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuDeleteAngka\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">delete</i></button><span class=\"mdl-chip__text\">Delete</span></span></td></tr>");
+          var style;
+          if(childSnapshot.val().audioUrl){
+              style = "background: green;color: white;";
+          } else {
+              style = "";
+          }
+          $("#table_angka").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer; "+ style +"\"><button id=\"menuUploadAudioAngka\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\"  style=\"cursor:pointer\"><button id=\"menuEditAngka\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">edit</i></button><span class=\"mdl-chip__text\">Edit</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuDeleteAngka\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">delete</i></button><span class=\"mdl-chip__text\">Delete</span></span></td></tr>");
       });
     });
     firebase.database().ref('/Bahasa/' + bahasa + "/Percakapan/").once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
-          $("#table_percakapan").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuUploadAudioPercakapan\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\"  style=\"cursor:pointer\"><button id=\"menuEditPercakapan\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">edit</i></button><span class=\"mdl-chip__text\">Edit</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuDeletePercakapan\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">delete</i></button><span class=\"mdl-chip__text\">Delete</span></span></td></tr>");
+          var style;
+          if(childSnapshot.val().audioUrl){
+              style = "background: green;color: white;";
+          } else {
+              style = "";
+          }
+          $("#table_percakapan").prepend("<tr><td class=\"mdl-data-table__cell--non-numeric\">" + childSnapshot.val().bahasaIndonesia + "</td><td>" + childSnapshot.val().bahasaDaerah + "</td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer; "+ style +"\"><button id=\"menuUploadAudioPercakapan\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">&#xE2C3;</i></button><span class=\"mdl-chip__text\">Audio</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\"  style=\"cursor:pointer\"><button id=\"menuEditPercakapan\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">edit</i></button><span class=\"mdl-chip__text\">Edit</span></span></td><td><span class=\"mdl-chip mdl-chip--contact\" style=\"cursor:pointer\"><button id=\"menuDeletePercakapan\" value=\""+childSnapshot.key+"\" class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\"><i class=\"material-icons\">delete</i></button><span class=\"mdl-chip__text\">Delete</span></span></td></tr>");
       });
     });
 }
@@ -158,6 +176,18 @@ for (i = 0; i < acc.length; i++) {
   });
 }());
 
+// Fungsi Progress dialog upload audio
+(function () {
+    var dialog = document.querySelector('#dialog5');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
+
 var keyEdit;
 $('#btnInputKeluarga').click(function() {
     var key
@@ -171,6 +201,7 @@ $('#btnInputKeluarga').click(function() {
     manageData(key, "Keluarga", bahasaIndonesia, bahasaDaerah);
 });
 
+var group;
 $(document).ready(function(){
     $(document).on("click", "#menuDeleteKeluarga", function() {
         firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Keluarga').child($(this).val()).remove();
@@ -186,7 +217,17 @@ $(document).ready(function(){
         dialog.showModal();
     });
     $(document).on("click", "#menuUploadAudioKeluarga", function() {
-
+        keyEdit = $(this).val();
+        var dialog = document.querySelector('#dialog5');
+        firebase.database().ref('/Bahasa/' + selectedBahasa + '/Keluarga/' + $(this).val()).once('value').then(function(snapshot) {
+            if(snapshot.val().audioUrl){
+                $("#player").attr("src", snapshot.val().audioUrl);
+            } else {
+                $("#player").attr("src", "");
+            }
+        });
+        group = "Keluarga";
+        dialog.showModal();
     });
 });
 
@@ -235,7 +276,17 @@ $(document).ready(function(){
         dialog.showModal();
     });
     $(document).on("click", "#menuUploadAudioAngka", function() {
-
+        keyEdit = $(this).val();
+        var dialog = document.querySelector('#dialog5');
+        firebase.database().ref('/Bahasa/' + selectedBahasa + '/Angka/' + $(this).val()).once('value').then(function(snapshot) {
+            if(snapshot.val().audioUrl){
+                $("#player").attr("src", snapshot.val().audioUrl);
+            } else {
+                $("#player").attr("src", "");
+            }
+        });
+        group = "Angka";
+        dialog.showModal();
     });
 });
 // Fungsi Progress dialog percakapan
@@ -283,7 +334,17 @@ $(document).ready(function(){
         dialog.showModal();
     });
     $(document).on("click", "#menuUploadAudioPercakapan", function() {
-
+        keyEdit = $(this).val();
+        var dialog = document.querySelector('#dialog5');
+        firebase.database().ref('/Bahasa/' + selectedBahasa + '/Percakapan/' + $(this).val()).once('value').then(function(snapshot) {
+            if(snapshot.val().audioUrl){
+                $("#player").attr("src", snapshot.val().audioUrl);
+            } else {
+                $("#player").attr("src", "");
+            }
+        });
+        group = "Percakapan";
+        dialog.showModal();
     });
 });
 
@@ -338,6 +399,42 @@ $(document).ready(function(){
             }
         );
     });
+    var uploaderAudio = document.getElementById('uploaderAudio');
+    var fileButtonAudio = document.getElementById('btnUploadAudio');
+    fileButtonAudio.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        var storageRef = firebase.storage().refFromURL('gs://bahasaku-a7af4.appspot.com/Audios/'+ $(txtAudioName).val() + '_' + makeid() );
+        console.log(storageRef);
+        var task = storageRef.put(file);
+        console.log(task);
+        task.on('state_changed',
+            function progress(snapshot) {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                uploaderAudio.value = progress;
+            },
+            function error(err) {
+
+            },
+            function complete() {
+                var audioURL = task.snapshot.downloadURL;
+                var updates = {};
+                updates['/Bahasa/' + selectedBahasa + '/' + group + '/' + keyEdit + '/audioUrl'] = audioURL;
+                firebase.database().ref().update(updates);
+            }
+        );
+    });
+
+    function saveToDatabase() {
+
+    }
+
+    function makeid(){
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for( var i=0; i < 5; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+    }
 });
 
 //untuk update atau tambah data
