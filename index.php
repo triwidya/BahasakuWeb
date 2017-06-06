@@ -14,7 +14,7 @@
       }
 
 </style>
-    <div style="padding-left: 30px">
+    <div style="padding-left: 0px">
       <div class="mdl-grid">
         <div class="sejarah-card-square mdl-card mdl-shadow--2dp">
           <div id="latar" class="mdl-card__title mdl-card--expand">
@@ -35,6 +35,7 @@
   <style>
       .kamus-card-wide.mdl-card {
         width: 700px;
+        left: 90px;
       }
       .kamus-card-wide > .mdl-card__title {
         background: bottom right 15% no-repeat #46B6AC
@@ -45,7 +46,7 @@
         color: #46B6AC;
   }
       </style>
-      <div style="padding-left : 100px">
+      <div style="padding-left : 0px">
 
       <div class="kamus-card-wide mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title">
@@ -86,6 +87,7 @@
 <style>
     .kamusAngka-card-wide.mdl-card {
       width: 700px;
+      left: 90px;
     }
     .kamusAngka-card-wide > .mdl-card__title {
       background: bottom right 15% no-repeat #46B6AC
@@ -135,6 +137,7 @@
       <style>
       .kamusPercakapan-card-wide.mdl-card {
         width: 700px;
+        left: 90px;
       }
       .kamusPercakapan-card-wide > .mdl-card__title {
         background: bottom right 15% no-repeat #46B6AC
@@ -150,40 +153,44 @@
         width: 700px;
 
       }
-      </style>
 
-      <div style="padding : 20px 0">
 
-      <div class="kamusPercakapan-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Percakapan</h2>
+
+        </style>
+
+        <div style="padding : 20px 0">
+
+        <div class="kamusPercakapan-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Percakapan</h2>
+          </div>
+        </style>
+
+        <div style="height : 30px" >
         </div>
-      </style>
+        <table class="mdl-data-table mdl-js-data-table">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
+              <th>Bahasa Daerah</th>
+              <th>Menu</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="table_percakapan">
 
-      <div style="height : 30px" >
-      </div>
-      <table class="mdl-data-table mdl-js-data-table">
-        <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric">Bahasa Indonesia</th>
-            <th>Bahasa Daerah</th>
-            <th>Menu</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody id="table_percakapan">
-
-        </tbody>
-      </table>
-        <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-percakapan">
-            <i class="material-icons">add</i>
-          </button>
+          </tbody>
+        </table>
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-percakapan">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
         </div>
-      </div>
-      </div>
-      </div>
+        </div>
+        </div>
+
 
 
 

@@ -190,6 +190,38 @@ for (i = 0; i < acc.length; i++) {
   });
 }());
 
+// Fungsi Progress dialog tambah bahasa
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-bahasa');
+    var dialog = document.querySelector('#dialog5  ');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
+
+// Fungsi Progress dialog edit bahasa
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-edit');
+    var dialog = document.querySelector('#dialog6');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+    });
+}());
+
 $('#btnInputKeluarga').click(function() {
   const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
   const bahasaDaerah = $('#txtDaerahKeluarga').val().trim();
