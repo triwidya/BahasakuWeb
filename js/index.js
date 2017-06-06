@@ -319,6 +319,56 @@ $('#btnInputPercakapan').click(function() {
     manageData(key, "Percakapan", bahasaIndonesia, bahasaDaerah);
 });
 
+// Fungsi Progress dialog tambah bahasa
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-bahasa');
+    var dialog = document.querySelector('#dialog5  ');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());
+
+// Fungsi Progress dialog edit bahasa
+(function () {
+    var dialogButton = document.querySelector('.dialog-button-edit');
+    var dialog = document.querySelector('#dialog6');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+       dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+    });
+}());
+
+$('#btnInputKeluarga').click(function() {
+  const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
+  const bahasaDaerah = $('#txtDaerahKeluarga').val().trim();
+  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Keluarga').push().set({
+    bahasaDaerah: bahasaDaerah,
+    bahasaIndonesia: bahasaIndonesia
+  });
+});
+
+$('#btnInputAngka').click(function() {
+  const bahasaIndonesia = $('#txtBahasaAngka').val().trim();
+  const bahasaDaerah = $('#txtDaerahAngka').val().trim();
+  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Angka').push().set({
+    bahasaDaerah: bahasaDaerah,
+    bahasaIndonesia: bahasaIndonesia
+  });
+});
+
 $(document).ready(function(){
     $(document).on("click", "#menuDeletePercakapan", function() {
         firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Percakapan').child($(this).val()).remove();
