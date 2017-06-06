@@ -10,6 +10,12 @@
     };
     firebase.initializeApp(config);
 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (!user) {
+            window.location.assign("http://localhost/BahasakuWeb/auth.php");
+      }
+    });
+
     const dbRefObject = firebase.database().ref().child('Provinsi');
     const menu = document.getElementById('menu');
 
@@ -199,6 +205,8 @@ $('#btnInputKeluarga').click(function() {
     const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
     const bahasaDaerah = $('#txtDaerahKeluarga').val().trim();
     manageData(key, "Keluarga", bahasaIndonesia, bahasaDaerah);
+    $('#txtBahasaKeluarga').val('');
+    $('#txtDaerahKeluarga').val('');
 });
 
 var group;
@@ -259,6 +267,8 @@ $('#btnInputAngka').click(function() {
     const bahasaIndonesia = $('#txtBahasaAngka').val().trim();
     const bahasaDaerah = $('#txtDaerahAngka').val().trim();
     manageData(key, "Angka", bahasaIndonesia, bahasaDaerah);
+    $('#txtBahasaAngka').val('');
+    $('#txtDaerahAngka').val('');
 });
 
 $(document).ready(function(){
@@ -317,6 +327,8 @@ $('#btnInputPercakapan').click(function() {
     const bahasaIndonesia = $('#txtBahasaPercakapan').val().trim();
     const bahasaDaerah = $('#txtDaerahPercakapan').val().trim();
     manageData(key, "Percakapan", bahasaIndonesia, bahasaDaerah);
+    $('#txtBahasaPercakapan').val('');
+    $('#txtDaerahPercakapan').val('');
 });
 
 // Fungsi Progress dialog tambah bahasa
@@ -337,19 +349,37 @@ $('#btnInputPercakapan').click(function() {
 
 // Fungsi Progress dialog edit bahasa
 (function () {
-    var dialogButton = document.querySelector('.dialog-button-edit-bahasa');
+    var dialogButton = document.querySelector('.dialog-button-delete-bahasa');
     var dialog = document.querySelector('#dialog6');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
     dialogButton.addEventListener('click', function() {
        dialog.showModal();
+       firebase.database().ref('Provinsi').once('value', function(snapshot) {
+         snapshot.forEach(function(childSnapshot) {
+             $('#listBahasaEdit').prepend('<option value=\"' + childSnapshot.key + '\">'+childSnapshot.key+'</option>');
+         });
+       });
     });
     dialog.querySelector('button:not([disabled])')
     .addEventListener('click', function() {
       dialog.close();
     });
 }());
+
+$('#listBahasaEdit').change(function() {
+    firebase.database().ref('Provinsi/' + $('#listBahasaEdit').val()).once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+          $('#listBahasaDetailEdit').prepend('<option value=\"' + childSnapshot.key + '\">'+childSnapshot.val()+'</option>');
+      });
+    });
+});
+
+$('#btnDeleteData').click(function () {
+    firebase.database().ref('/Bahasa/'+ $('#listBahasaDetailEdit :selected').text()).remove();
+    firebase.database().ref('/Provinsi/' + $('#listBahasaEdit').val() + '/' + $('#listBahasaDetailEdit').val()).remove();
+});
 
 $('#btnInputKeluarga').click(function() {
   const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
@@ -485,6 +515,20 @@ $(document).ready(function(){
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
     }
+});
+
+$('#btnInputBahasa').click(function() {
+  const provinsi = $('#listProvinsiAdd').val().trim();
+  const bahasa = $('#txtBahasa').val().trim();
+  firebase.database().ref().child('Provinsi').child(provinsi).push().set(bahasa);
+});
+
+$('#btnLogout').click(function () {
+    firebase.auth().signOut().then(function() {
+        window.location.assign("http://localhost/BahasakuWeb/auth.php");
+    }).catch(function(error) {
+      // An error happened.
+    });
 });
 
 //untuk update atau tambah data
