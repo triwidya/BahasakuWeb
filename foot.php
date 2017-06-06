@@ -93,27 +93,42 @@
       <form>
         <div style="padding:px"></div>
       <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
-        <select class="mdl-selectfield__select" id="provinsi" name="Provisi" style="padding:5px">
-          <option value=""></option>
-          <option value="option1">Sumatera utara</option>
-          <option value="option2">option 2</option>
-          <option value="option3">option 3</option>
-          <option value="option4">option 4</option>
-          <option value="option5">option 5</option>
+        <select class="mdl-selectfield__select" id="listProvinsiAdd" name="Provisi" style="padding:5px">
+            <option value="">Pilih Provinsi</option>
+            <option value="Provinsi Aceh">Provinsi Aceh</option>
+            <option value="Provinsi Bali">Provinsi Bali</option>
+            <option value="Provinsi Bangka Belitung">Provinsi Bangka Belitung</option>
+            <option value="Provinsi Banten">Provinsi Banten</option>
+            <option value="Provinsi Bengkulu">Provinsi Bengkulu</option>
+            <option value="Provinsi DKI Jakarta">Provinsi DKI Jakarta</option>
+            <option value="Provinsi Gorontalo">Provinsi Gorontalo</option>
+            <option value="Provinsi Jambi">Provinsi Jambi</option>
+            <option value="Provinsi Jawa Barat">Provinsi Jawa Barat</option>
+            <option value="Provinsi Jawa Tengah">Provinsi Jawa Tengah</option>
+            <option value="Provinsi Jawa Timur">Provinsi Jawa Timur</option>
+            <option value="Provinsi Kalimantan Barat">Provinsi Kalimantan Barat</option>
+            <option value="Provinsi Kalimantan Selatan">Provinsi Kalimantan Selatan</option>
+            <option value="Provinsi Kalimantan Tengah">Provinsi Kalimantan Tengah</option>
+            <option value="Provinsi Kalimantan Timur">Provinsi Kalimantan Timur</option>
+            <option value="Provinsi Kalimantan Utara">Provinsi Kalimantan Utara</option>
+            <option value="Provinsi Kepulauan Riau">Provinsi Kepulauan Riau</option>
+            <option value="Provinsi Lampung">Provinsi Lampung</option>
+            <option value="Provinsi Maluku">Provinsi Maluku</option>
+            <option value="Provinsi Papua">Provinsi Papua</option>
+            <option value="Provinsi Sulawesi Selatan">Provinsi Sulawesi Selatan</option>
+            <option value="Provinsi Sulawesi Tenggara">Provinsi Sulawesi Tenggara</option>
+            <option value="Provinsi Sumatera Barat">Provinsi Sumatera Barat</option>
+            <option value="Provinsi Sumatera Utara">Provinsi Sumatera Utara</option>
+            <option value="Provinsi Yogyakarta">Provinsi Yogyakarta</option>
         </select>
-        <label class="mdl-selectfield__label" for="professsion2">Pilih Provinsi</label>
       </div>
     </form>
       <div style="padding:10px"></div>
-      <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
-      <div class="pic-section">
-        <div style="padding-top: 10px" >
-          <input type="submit" id="btnInput" class="mdl-button mdl-button--raised mdl-button--colored" value="Simpan" data-dismiss="modal">
-        </div>
-      </div>
+      <input type="name" class="form-control" id="txtBahasa" placeholder="Bahasa Daerah">
       <div class="mdl-dialog__actions">
         <div style="padding-left: 150px">
           <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
+          <input type="submit" id="btnInputBahasa" class="mdl-button mdl-button--raised mdl-button--colored" value="Simpan" data-dismiss="modal">
         </div>
       </div>
     </div>
@@ -121,32 +136,23 @@
 
   <!-- Fungsi Progress dialog edit bahasa -->
   <dialog id="dialog6" class="mdl-dialog" style="height:336px">
-    <h3 class="mdl-dialog__title">Edit Bahasa</h3>
+    <h3 class="mdl-dialog__title">Delete Bahasa</h3>
     <div class="mdl-dialog__content">
       <form>
         <div style="padding:px"></div>
       <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
-        <select class="mdl-selectfield__select" id="provinsi" name="Provisi" style="padding:5px">
-          <option value=""></option>
-          <option value="option1">Sumatera utara</option>
-          <option value="option2">option 2</option>
-          <option value="option3">option 3</option>
-          <option value="option4">option 4</option>
-          <option value="option5">option 5</option>
+        <select class="mdl-selectfield__select" id="listBahasaEdit" name="Provisi" style="padding:5px">
+          <option value="">Pilih Provinsi</option>
         </select>
-        <label class="mdl-selectfield__label" for="professsion2">Pilih Provinsi</label>
+        <select class="mdl-selectfield__select" id="listBahasaDetailEdit" name="Provisi" style="padding:5px">
+          <option value="">Pilih Provinsi</option>
+        </select>
       </div>
     </form>
-      <div style="padding:10px"></div>
-      <input type="name" class="form-control" id="txtDaerahKeluarga" placeholder="Bahasa Daerah">
-      <div class="pic-section">
-        <div style="padding-top: 10px" >
-          <input type="submit" id="btnInput" class="mdl-button mdl-button--raised mdl-button--colored" value="Simpan" data-dismiss="modal">
-        </div>
-      </div>
       <div class="mdl-dialog__actions">
         <div style="padding-left: 150px">
           <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
+          <input type="submit" id="btnDeleteData" class="mdl-button mdl-button--raised mdl-button--colored" value="Delete" data-dismiss="modal">
         </div>
       </div>
     </div>
