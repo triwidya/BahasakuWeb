@@ -351,24 +351,6 @@ $('#btnInputPercakapan').click(function() {
     });
 }());
 
-$('#btnInputKeluarga').click(function() {
-  const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
-  const bahasaDaerah = $('#txtDaerahKeluarga').val().trim();
-  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Keluarga').push().set({
-    bahasaDaerah: bahasaDaerah,
-    bahasaIndonesia: bahasaIndonesia
-  });
-});
-
-$('#btnInputAngka').click(function() {
-  const bahasaIndonesia = $('#txtBahasaAngka').val().trim();
-  const bahasaDaerah = $('#txtDaerahAngka').val().trim();
-  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Angka').push().set({
-    bahasaDaerah: bahasaDaerah,
-    bahasaIndonesia: bahasaIndonesia
-  });
-});
-
 $(document).ready(function(){
     $(document).on("click", "#menuDeletePercakapan", function() {
         firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Percakapan').child($(this).val()).remove();
@@ -453,7 +435,7 @@ $(document).ready(function(){
     var fileButtonAudio = document.getElementById('btnUploadAudio');
     fileButtonAudio.addEventListener('change', function(e) {
         var file = e.target.files[0];
-        var storageRef = firebase.storage().refFromURL('gs://bahasaku-a7af4.appspot.com/Audios/'+ $(txtAudioName).val() + '_' + makeid() );
+        var storageRef = firebase.storage().refFromURL('gs://bahasaku-a7af4.appspot.com/Audios/'+ keyEdit);
         console.log(storageRef);
         var task = storageRef.put(file);
         console.log(task);
@@ -473,18 +455,6 @@ $(document).ready(function(){
             }
         );
     });
-
-    function saveToDatabase() {
-
-    }
-
-    function makeid(){
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for( var i=0; i < 5; i++ )
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-        return text;
-    }
 });
 
 //untuk update atau tambah data

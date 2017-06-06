@@ -312,12 +312,12 @@
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <nav class="mdl-navigation">          <!-- Search -->
-                    <div class="mdh-expandable-search mdl-cell--hide-phone">
+                    <!-- <div class="mdh-expandable-search mdl-cell--hide-phone">
                       <i class="material-icons">search</i>
                       <form action="#">
                         <input type="text" placeholder="Search" size="18">
                       </form>
-                    </div>
+                    </div> -->
 
             <!-- LOGOUT -->
             <button type="button" id="btnLogout" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect dialog-button-logout">
