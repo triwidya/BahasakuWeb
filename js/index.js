@@ -381,23 +381,6 @@ $('#btnDeleteData').click(function () {
     firebase.database().ref('/Provinsi/' + $('#listBahasaEdit').val() + '/' + $('#listBahasaDetailEdit').val()).remove();
 });
 
-$('#btnInputKeluarga').click(function() {
-  const bahasaIndonesia = $('#txtBahasaKeluarga').val().trim();
-  const bahasaDaerah = $('#txtDaerahKeluarga').val().trim();
-  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Keluarga').push().set({
-    bahasaDaerah: bahasaDaerah,
-    bahasaIndonesia: bahasaIndonesia
-  });
-});
-
-$('#btnInputAngka').click(function() {
-  const bahasaIndonesia = $('#txtBahasaAngka').val().trim();
-  const bahasaDaerah = $('#txtDaerahAngka').val().trim();
-  firebase.database().ref().child('Bahasa').child(selectedBahasa).child('Angka').push().set({
-    bahasaDaerah: bahasaDaerah,
-    bahasaIndonesia: bahasaIndonesia
-  });
-});
 
 $(document).ready(function(){
     $(document).on("click", "#menuDeletePercakapan", function() {

@@ -150,7 +150,7 @@
 
       <style>
       .mdl-data-table{
-        width: 700px;
+        width: 900px;
 
       }
 
