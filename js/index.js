@@ -178,7 +178,7 @@ for (i = 0; i < acc.length; i++) {
 
 // Fungsi Progress dialog upload audio
 (function () {
-    var dialog = document.querySelector('#dialog5');
+    var dialog = document.querySelector('#dialog7');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
@@ -218,7 +218,7 @@ $(document).ready(function(){
     });
     $(document).on("click", "#menuUploadAudioKeluarga", function() {
         keyEdit = $(this).val();
-        var dialog = document.querySelector('#dialog5');
+        var dialog = document.querySelector('#dialog7');
         firebase.database().ref('/Bahasa/' + selectedBahasa + '/Keluarga/' + $(this).val()).once('value').then(function(snapshot) {
             if(snapshot.val().audioUrl){
                 $("#player").attr("src", snapshot.val().audioUrl);
@@ -277,7 +277,7 @@ $(document).ready(function(){
     });
     $(document).on("click", "#menuUploadAudioAngka", function() {
         keyEdit = $(this).val();
-        var dialog = document.querySelector('#dialog5');
+        var dialog = document.querySelector('#dialog7');
         firebase.database().ref('/Bahasa/' + selectedBahasa + '/Angka/' + $(this).val()).once('value').then(function(snapshot) {
             if(snapshot.val().audioUrl){
                 $("#player").attr("src", snapshot.val().audioUrl);
@@ -321,7 +321,7 @@ $('#btnInputPercakapan').click(function() {
 
 // Fungsi Progress dialog tambah bahasa
 (function () {
-    var dialogButton = document.querySelector('.dialog-button-bahasa');
+    var dialogButton = document.querySelector('.dialog-button-add-bahasa');
     var dialog = document.querySelector('#dialog5  ');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
@@ -337,7 +337,7 @@ $('#btnInputPercakapan').click(function() {
 
 // Fungsi Progress dialog edit bahasa
 (function () {
-    var dialogButton = document.querySelector('.dialog-button-edit');
+    var dialogButton = document.querySelector('.dialog-button-edit-bahasa');
     var dialog = document.querySelector('#dialog6');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
@@ -385,7 +385,7 @@ $(document).ready(function(){
     });
     $(document).on("click", "#menuUploadAudioPercakapan", function() {
         keyEdit = $(this).val();
-        var dialog = document.querySelector('#dialog5');
+        var dialog = document.querySelector('#dialog7');
         firebase.database().ref('/Bahasa/' + selectedBahasa + '/Percakapan/' + $(this).val()).once('value').then(function(snapshot) {
             if(snapshot.val().audioUrl){
                 $("#player").attr("src", snapshot.val().audioUrl);

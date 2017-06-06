@@ -335,13 +335,13 @@
                     <!-- <div class="sub-button tl" id="addBahasa">
                       <i class="material-icons">add</i>
                     </div> -->
-                    <div class="sub-button tr" id="editBahasa">
+                    <div class="sub-button tr dialog-button-edit-bahasa" id="editBahasa">
                       <i class="material-icons">edit</i>
                     </div>
                     <div class="sub-button bl" id="deleteBahasa">
                       <i class="material-icons">delete</i>
                     </div>
-                    <div class="sub-button br" id="addBahasa">
+                    <div class="sub-button br dialog-button-add-bahasa" id="addBahasa">
                       <i class="material-icons">add</i>
                     </div>
                   </div>

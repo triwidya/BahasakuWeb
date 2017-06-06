@@ -84,7 +84,7 @@
       </div>
     </div>
   </dialog>
-  
+
     <!-- Fungsi Progress dialog tambah bahasa -->
   <dialog id="dialog5" class="mdl-dialog" style="height:336px">
     <h3 class="mdl-dialog__title">Tambah Bahasa</h3>
@@ -118,28 +118,6 @@
     </div>
   </dialog>
 
-  <!-- Fungsi Progress dialog audio -->
-
-  <dialog id="dialog5" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Tambah Audio</h3>
-    <div class="mdl-dialog__content">
-      <audio class="row mdl-cell mdl-cell--12-col" id="player" controls>
-        Your browser does not support the audio element.
-      </audio>
-      <input type="name" class="form-control" id="txtAudioName" placeholder="Nama Audio">
-      <div class="row col-sm-12">
-        <progress class="mdl-cell mdl-cell--12-col" value="0" max="100" id="uploaderAudio">0%</progress>
-      </div>
-      <input type="file" id="btnUploadAudio" value="upload">
-      <div class="mdl-dialog__actions">
-        <div style="padding-left: 150px">
-          <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
-          <input type="submit" id="btnInputAudio" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
-        </div>
-      </div>
-    </div>
-  </dialog>
-  
   <!-- Fungsi Progress dialog edit bahasa -->
   <dialog id="dialog6" class="mdl-dialog" style="height:336px">
     <h3 class="mdl-dialog__title">Edit Bahasa</h3>
@@ -168,6 +146,28 @@
       <div class="mdl-dialog__actions">
         <div style="padding-left: 150px">
           <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Fungsi Progress dialog audio -->
+
+  <dialog id="dialog7" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Tambah Audio</h3>
+    <div class="mdl-dialog__content">
+      <audio class="row mdl-cell mdl-cell--12-col" id="player" controls>
+        Your browser does not support the audio element.
+      </audio>
+      <input type="name" class="form-control" id="txtAudioName" placeholder="Nama Audio">
+      <div class="row col-sm-12">
+        <progress class="mdl-cell mdl-cell--12-col" value="0" max="100" id="uploaderAudio">0%</progress>
+      </div>
+      <input type="file" id="btnUploadAudio" value="upload">
+      <div class="mdl-dialog__actions">
+        <div style="padding-left: 150px">
+          <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
+          <input type="submit" id="btnInputAudio" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
         </div>
       </div>
     </div>
