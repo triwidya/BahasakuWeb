@@ -483,7 +483,7 @@ $(document).ready(function(){
     var fileButtonAudio = document.getElementById('btnUploadAudio');
     fileButtonAudio.addEventListener('change', function(e) {
         var file = e.target.files[0];
-        var storageRef = firebase.storage().refFromURL('gs://bahasaku-a7af4.appspot.com/Audios/'+ $(txtAudioName).val() + '_' + makeid() );
+        var storageRef = firebase.storage().refFromURL('gs://bahasaku-a7af4.appspot.com/Audios/'+ keyEdit);
         console.log(storageRef);
         var task = storageRef.put(file);
         console.log(task);
@@ -503,18 +503,6 @@ $(document).ready(function(){
             }
         );
     });
-
-    function saveToDatabase() {
-
-    }
-
-    function makeid(){
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for( var i=0; i < 5; i++ )
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-        return text;
-    }
 });
 
 $('#btnInputBahasa').click(function() {
