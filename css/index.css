@@ -105,3 +105,53 @@ div.panel p{
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+.sejarah-card-square.mdl-card {
+  width: 450px;
+  height: 520px;
+}
+.sejarah-card-square > .mdl-card__title {
+  color: #fff;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.kamus-card-wide.mdl-card {
+  width: 700px;
+  left: 90px;
+}
+.kamus-card-wide > .mdl-card__title {
+  background: bottom right 15% no-repeat #46B6AC
+  height: 20px;
+}
+.kamus-card-wide >.mdl-card__menu {
+  color: #46B6AC;
+}
+
+.kamusAngka-card-wide.mdl-card {
+  width: 700px;
+  left: 90px;
+}
+.kamusAngka-card-wide > .mdl-card__title {
+  background: bottom right 15% no-repeat #46B6AC
+  height: 20px;
+}
+.kamusAngka-card-wide > .mdl-card__menu {
+  color: #46B6AC;
+}
+
+.kamusPercakapan-card-wide.mdl-card {
+  width: 700px;
+  left: 90px;
+}
+.kamusPercakapan-card-wide > .mdl-card__title {
+  background: bottom right 15% no-repeat #46B6AC
+  height: 20px;
+}
+.kamusPercakapan-card-wide > .mdl-card__menu {
+  color: #46B6AC;
+}
+
+.mdl-data-table {
+  max-width: 700px;
+}

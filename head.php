@@ -350,5 +350,5 @@
             </div>
 
 
-      <main class="mdl-layout__content" style="padding : 76px">
+      <main class="mdl-layout__content mdl-cell mdl-cell--12-col" style="padding : 70px 20px">
     <!-- END COPYRIGHT -->
