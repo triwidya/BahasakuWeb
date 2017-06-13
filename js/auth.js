@@ -41,4 +41,21 @@ $( document ).ready(function() {
     } else {
     }
   });
+
 });
+
+(function () {
+    var dialogButton = document.querySelector('.dialog-forgot');
+    var dialog = document.querySelector('#dialog8');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialogButton.addEventListener('click', function() {
+      $('#btnInputPercakapan').val('ADD');
+      dialog.showModal();
+    });
+    dialog.querySelector('button:not([disabled])')
+    .addEventListener('click', function() {
+      dialog.close();
+  });
+}());

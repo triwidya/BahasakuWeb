@@ -17,6 +17,9 @@
 			<input type="email" class="from-control" id="txtEmail"  placeholder="Email">
 			<input type="password" class="from-control" id="txtPassword" placeholder="Password">
 			<button type="button" id="btnLogin">Login</button>
+      <div>
+        <a type="button" class="forgot dialog-forgot" id="forgotPassword" href="resetpassword.php" class="confirmation">Forgot password?</a>
+      </div>
 		</form>
 	</div>
 

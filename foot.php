@@ -134,7 +134,7 @@
     </div>
   </dialog>
 
-  <!-- Fungsi Progress dialog edit bahasa -->
+  <!-- Fungsi Progress dialog delete bahasa -->
   <dialog id="dialog6" class="mdl-dialog" style="height:336px">
     <h3 class="mdl-dialog__title">Delete Bahasa</h3>
     <div class="mdl-dialog__content">
@@ -145,7 +145,7 @@
           <option value="">Pilih Provinsi</option>
         </select>
         <select class="mdl-selectfield__select" id="listBahasaDetailEdit" name="Provisi" style="padding:5px">
-          <option value="">Pilih Provinsi</option>
+          <option value="">Pilih Bahasa Daerah</option>
         </select>
       </div>
     </form>
@@ -177,5 +177,23 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Fungsi Progress dialog percakapan -->
+
+  <dialog id="dialog8" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Reset Password</h3>
+    <div class="mdl-dialog__content">
+      <input type="name" class="form-control" id="txtEmailId" placeholder="Email Id">
+      <div style="padding:10px"></div>
+      <div class="mdl-dialog__actions">
+        <div style="padding-left: 150px">
+          <button type="button" class="mdl-button mdl-button--raised mdl-button--colored">Close</button>
+          <input type="submit" id="btnInputPercakapan" class="mdl-button mdl-button--raised mdl-button--colored" value="Update" data-dismiss="modal">
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Fungsi Progress dialog audio -->
 
 </html>
